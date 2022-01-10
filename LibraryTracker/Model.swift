@@ -1,13 +1,5 @@
-//
-//  Model.swift
-//  LibraryTracker
-//
-//  Created by Артём Тихоненко on 11.11.2021.
-//
-
 import Foundation
-import FirebaseFirestore
-import FirebaseAuth
+
 
 struct Author {
     let name: String
@@ -16,22 +8,24 @@ struct Author {
 }
 
 typealias Year = Int
+typealias Rating = Int
+typealias Genre = String
 
-enum BookReadProgressString: String, CaseIterable {
-    case unopened = "unopened"
-    case started = "started"
-    case inProgress = "inProgress"
-    case almostRead = "almostRead"
-    case read = "read"
+enum BookReadProgress: String {
+    case unopened
+    case started
+    case inProgress
+    case almostRead
+    case read
 }
 
-struct BookReadProgress {
+struct BookProgress {
     var pagesRead: Int
     let pagesInBook: Int
     var percentageRead: Int {
         100 * pagesRead / pagesInBook
     }
-    var progressStringEnum: BookReadProgressString {
+    var progress: BookReadProgress {
         if percentageRead == 0 {
             return .unopened
         } else if percentageRead < 10 {
@@ -46,17 +40,26 @@ struct BookReadProgress {
         return .unopened
     }
     
-    var progressString: String {
-        return progressStringEnum.rawValue
-    }
+}
+
+struct BookRegistrationData {
+    let isbn10: String?
+    let isbn13: String?
+    let udc: String?
 }
 
 struct Book {
     let name: String
-    let author: Author
+    let authors: [Author]
     let year: Year
+    let id: UUID
+    let genres: [Genre]
+    let bookRegData: BookRegistrationData
     
-    var progress: BookReadProgress
+    var rating: Rating
+    
+    var progress: BookProgress
     var lastOpenedAt: Date
+    var readingPosition: Int?
     
 }

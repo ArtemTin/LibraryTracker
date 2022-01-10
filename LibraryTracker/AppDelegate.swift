@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  LibraryTracker
-//
-//  Created by Артём Тихоненко on 10.11.2021.
-//
-
 import UIKit
 
 @main
