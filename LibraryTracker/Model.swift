@@ -1,15 +1,22 @@
 import Foundation
 
+struct Name {
+    let familyName: String
+    let firstName: String
+    let middleName: String?
+}
 
 struct Author {
-    let name: String
-    let fullName: String
+    let fullName: Name
+    var additionalInfo: [String: String] = [:]
     let id: UUID
 }
 
 typealias Year = Int
 typealias Rating = Int
 typealias Genre = String
+typealias BookID = UUID
+typealias UserID = UUID
 
 enum BookReadProgress: String {
     case unopened
@@ -42,7 +49,7 @@ struct BookProgress {
     
 }
 
-struct BookRegistrationData {
+struct BookRegistrationInfo {
     let isbn10: String?
     let isbn13: String?
     let udc: String?
@@ -54,12 +61,20 @@ struct Book {
     let year: Year
     let id: UUID
     let genres: [Genre]
-    let bookRegData: BookRegistrationData
+    let bookRegData: BookRegistrationInfo?
+    var anotherVersions: [BookID]
     
     var rating: Rating
     
     var progress: BookProgress
-    var lastOpenedAt: Date
+    var lastOpenedAt: Date?
     var readingPosition: Int?
     
+}
+
+
+struct BookShelf {
+    var books: [Book]
+    let creator: UserID
+    let id: UUID
 }
