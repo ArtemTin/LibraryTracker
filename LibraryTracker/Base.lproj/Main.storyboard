@@ -1,58 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b2V-qo-Enm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fD2-T5-dJM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="8Hy-gu-I7K">
+        <!--Book Detail View Controller-->
+        <scene sceneID="ujN-OM-BVI">
             <objects>
-                <tableViewController id="5uS-gF-ihB" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="6UL-bc-ukm">
+                <viewController id="fD2-T5-dJM" customClass="BookDetailViewController" customModule="LibraryTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kAd-4R-IZY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBu-Zf-fHb">
+                                <rect key="frame" x="10" y="144" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4l-5B-Pr4">
+                                <rect key="frame" x="10" y="265" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIe-JW-n2w">
+                                <rect key="frame" x="10" y="386" width="394" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tWh-bs-J5M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookCell" id="Fiq-TK-wAh">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fiq-TK-wAh" id="Txf-kd-BJZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="5uS-gF-ihB" id="skf-aW-fNI"/>
-                            <outlet property="delegate" destination="5uS-gF-ihB" id="Ytm-UB-ivc"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="gC3-cn-pFY"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="i1l-u8-Nu4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1708.6956521739132" y="77.678571428571431"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="xK4-fO-8CE">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="b2V-qo-Enm" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7EV-pK-Ca0">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                        <constraints>
+                            <constraint firstItem="RBu-Zf-fHb" firstAttribute="top" secondItem="tWh-bs-J5M" secondAttribute="top" constant="100" id="2VF-aP-z1f"/>
+                            <constraint firstItem="RBu-Zf-fHb" firstAttribute="leading" secondItem="tWh-bs-J5M" secondAttribute="leading" constant="10" id="PJd-D0-1Mm"/>
+                            <constraint firstItem="tIe-JW-n2w" firstAttribute="top" secondItem="h4l-5B-Pr4" secondAttribute="bottom" constant="100" id="Raq-oQ-liA"/>
+                            <constraint firstItem="tWh-bs-J5M" firstAttribute="trailing" secondItem="tIe-JW-n2w" secondAttribute="trailing" constant="10" id="SoY-66-Gr9"/>
+                            <constraint firstItem="tWh-bs-J5M" firstAttribute="trailing" secondItem="RBu-Zf-fHb" secondAttribute="trailing" constant="10" id="ZN3-oN-g4J"/>
+                            <constraint firstItem="tIe-JW-n2w" firstAttribute="centerX" secondItem="kAd-4R-IZY" secondAttribute="centerX" id="bMu-P2-TBt"/>
+                            <constraint firstItem="h4l-5B-Pr4" firstAttribute="centerX" secondItem="kAd-4R-IZY" secondAttribute="centerX" id="f8r-5v-xqs"/>
+                            <constraint firstItem="h4l-5B-Pr4" firstAttribute="top" secondItem="RBu-Zf-fHb" secondAttribute="bottom" constant="100" id="qf4-Uo-Sdl"/>
+                            <constraint firstItem="h4l-5B-Pr4" firstAttribute="leading" secondItem="tWh-bs-J5M" secondAttribute="leading" constant="10" id="u1G-nu-lgA"/>
+                            <constraint firstItem="RBu-Zf-fHb" firstAttribute="centerX" secondItem="kAd-4R-IZY" secondAttribute="centerX" id="wNc-mN-NPz"/>
+                            <constraint firstItem="tWh-bs-J5M" firstAttribute="trailing" secondItem="h4l-5B-Pr4" secondAttribute="trailing" constant="10" id="wq7-zx-0wi"/>
+                            <constraint firstItem="tIe-JW-n2w" firstAttribute="leading" secondItem="tWh-bs-J5M" secondAttribute="leading" constant="10" id="ywN-29-HPE"/>
+                        </constraints>
+                    </view>
                     <connections>
-                        <segue destination="5uS-gF-ihB" kind="relationship" relationship="viewControllers" id="LEw-qF-9hg"/>
+                        <outlet property="bookAuthor" destination="h4l-5B-Pr4" id="GsK-lM-pq1"/>
+                        <outlet property="bookName" destination="RBu-Zf-fHb" id="Tei-V8-uXV"/>
+                        <outlet property="bookYear" destination="tIe-JW-n2w" id="kMb-IH-DTG"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0vX-B2-bir" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVo-a6-B1A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798.55072463768124" y="77.678571428571431"/>
+            <point key="canvasLocation" x="753.62318840579712" y="62.946428571428569"/>
         </scene>
     </scenes>
     <resources>
